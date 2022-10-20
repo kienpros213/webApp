@@ -1,3 +1,32 @@
+@font-face {
+    font-family: Madurai;
+    src: url(./fonts/ArimaMadurai-Thin.ttf);
+}
+
+@font-face {
+    font-family: MaduraiReg;
+    src: url(./fonts/ArimaMadurai-Regular.ttf);
+}
+
+@font-face {
+    font-family: MaduraiBold;
+    src: url(./fonts/ArimaMadurai-Bold.ttf);
+}
+
+@font-face {
+    font-family: MaduraiMed;
+    src: url(./fonts/ArimaMadurai-Medium.ttf);
+}
+
+@font-face {
+    font-family: MaduraiReg;
+    src: url(./fonts/ArimaMadurai-Regular.ttf);
+}
+
+*{
+    font-family: MaduraiBold;
+}
+
 .main{
     background-color: black;
 }
