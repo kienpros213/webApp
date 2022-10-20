@@ -14,7 +14,7 @@ function Search(){
 
 function search(){
     //const searchContent = document.getElementById('searchBar');
-    fetch('http://localhost:8080/product/allProducts')
+    fetch('http://localhost:8080/product/allProduct')
     .then((response) => response.json())
     .then((data) => console.log(data[1].productName, data[0].productName))  
 }
