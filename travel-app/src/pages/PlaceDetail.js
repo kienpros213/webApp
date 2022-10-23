@@ -4,6 +4,7 @@ import {hcm} from '../components/image/imageList'
 import { VStack } from '@chakra-ui/react';
 import { Stack, Box } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
 
 const placeArray = [
     {imgName: hcm, placeName: 'Nhà thờ Đức Bà', numberName: '1'},
@@ -18,9 +19,9 @@ function PlaceDetail(){
     const [text, setText] = useState('adu');
 
     function updateContent(){
-        fetch('http://localhost:8080/product/allProducts')
+        fetch('http://localhost:8080/place/allPlaces')
         .then((response) => response.json())
-        .then((data) => setText(data[1].productName))  
+        .then((data) => setText(data[0].placeName))
     }
     return(
         <Box bg = 'lime'>
@@ -37,6 +38,7 @@ function PlaceDetail(){
                     </Box>
                     <Box bg = '#54556b' h = '270px' w = '100%'>
                         {text}
+                        <Input/>
                         <Button colorScheme = 'facebook' onClick = {updateContent}>
                             lmao
                         </Button>

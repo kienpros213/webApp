@@ -1,18 +1,19 @@
 package data.data.Controller;
-
+import data.data.Repository.PlaceRepository;
 import data.data.Entity.Place;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @Controller
 @RequestMapping(path="/place")
 public class PlaceController {
     @Autowired
-    private data.data.Repository.PlaceRepository PlaceRepository;
+    private PlaceRepository PlaceRepository;
 
-    @PostMapping(path="/add")
-    public @ResponseBody String addNewPlace (@RequestParam String placeName, String description, String location){
+    @PostMapping(path="/addPlace")
+    public @ResponseBody String addNewPlace (@RequestBody String placeName, String description, String location){
         Place place = new Place();
         place.setPlaceName(placeName);
         place.setDescription(description);
@@ -20,9 +21,9 @@ public class PlaceController {
         PlaceRepository.save(place);
         return "Place Saved!";
     }
-    @CrossOrigin
-    @GetMapping(path = "allPlaces")
-    public @ResponseBody Iterable<Place> getAllPlace(){
-        return PlaceRepository.findByPlaceName("ho chi minh");
+
+    @PostMapping(path = "allPlaces")
+    public @ResponseBody Iterable<Place> getAllPlace(@RequestBody String placeName){
+        return PlaceRepository.findByPlaceName(placeName);
     }
 }

@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import MainPage from './pages/MainPage';
 import PlaceDetail from './pages/PlaceDetail';
+import AddPlace from './pages/AddPlace';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element = {<MainPage/>} />
         <Route path='/placeDetail' element = {<PlaceDetail/>} />
+        <Route path='/addPlace' element = {<AddPlace/>} />
       </Routes>
     </ChakraProvider>
   );
