@@ -3,6 +3,7 @@ import {Box, Image,Stack} from '@chakra-ui/react';
 
 function SearchByDetail(props){
     return(
+        <a href={props.link}>
             <Stack className="imgContainer" h={300} w={300} borderRadius={10} overflow='hidden'>
                 <Image maxH={230} maxW={300} className = 'img' src={props.img}
                 alt="lmao"></Image>
@@ -11,6 +12,7 @@ function SearchByDetail(props){
                     {props.number}
                 </Box>
             </Stack>
+        </a>
     );
 }
 
