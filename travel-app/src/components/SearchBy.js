@@ -1,8 +1,6 @@
 import React from 'react';
 import {HStack, Box} from '@chakra-ui/react';
 import SearchByDetail from './SearchByDetail';
-import {Route, Routes} from "react-router-dom";
-import Hcm from '../pages/Hcm';
 import {hcm, hanoi, haiphong, danang, hue, quangninh, ninhbinh, quangbinh, nhatrang} from './image/imageList'
 
 
