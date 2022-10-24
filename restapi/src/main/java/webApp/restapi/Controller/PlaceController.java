@@ -19,11 +19,12 @@ public class PlaceController {
         place.setPlaceName(placeName);
         place.setDescription(desc);
         place.setLocation(location);
+        PlaceRepository.save(place);
         return("place saved!");
     }
     @CrossOrigin
-    @GetMapping(path = "/allPlaces")
-    public @ResponseBody Iterable<Place> getAllPlaces(){
-        return PlaceRepository.findAll();
+    @PostMapping(path = "/allPlaces")
+    public @ResponseBody Iterable<Place> getAllPlaces(@RequestParam String placeName){
+        return PlaceRepository.findByPlaceName(placeName);
     }
 }
