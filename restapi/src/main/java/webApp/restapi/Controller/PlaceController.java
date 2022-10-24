@@ -19,8 +19,8 @@ public class PlaceController {
         return("place saved!");
     }
     @CrossOrigin
-    @PostMapping(path = "/allPlaces")
-    public @ResponseBody Iterable<Place> getAllPlaces(@RequestBody String placeName){
-        return PlaceRepository.findByPlaceName(placeName);
+    @GetMapping(path = "/allPlaces")
+    public @ResponseBody Iterable<Place> getAllPlaces(){
+        return PlaceRepository.findAll();
     }
 }

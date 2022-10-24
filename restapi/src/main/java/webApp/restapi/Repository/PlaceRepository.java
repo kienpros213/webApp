@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PlaceRepository extends CrudRepository<Place, Integer> {
 
-    List<Place> findByPlaceName(String placeName);
+    List<Place> findByPlaceName(Place place);
 
 }

@@ -28,17 +28,23 @@ function AddPlace(){
 
     function findPlace(){
         const placeName = document.getElementById('placeName').value;
-        let name = {placeName: placeName}
+        const description = document.getElementById('desc').value;
+        const location = document.getElementById('location').value;
+        let data = {
+            placeName: placeName,
+            description: description,
+            location: location
+        };
 
         fetch("http://localhost:8080/place/allPlaces", {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(name)
-            })
-            .then((response) => response.json())
-            .then((data) => console.log(data));
-            
-    
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+        })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+
     }
     return(
         <Box>
