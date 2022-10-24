@@ -14,17 +14,13 @@ public class PlaceController {
 
     @CrossOrigin
     @PostMapping(path="/addPlace")
-    public @ResponseBody String addNewPlace (@RequestParam String placeName, String desc, String location){
-        Place place = new Place();
-        place.setPlaceName(placeName);
-        place.setDescription(desc);
-        place.setLocation(location);
+    public @ResponseBody String addNewPlace (@RequestBody Place place){
         PlaceRepository.save(place);
         return("place saved!");
     }
     @CrossOrigin
     @PostMapping(path = "/allPlaces")
-    public @ResponseBody Iterable<Place> getAllPlaces(@RequestParam String placeName){
+    public @ResponseBody Iterable<Place> getAllPlaces(@RequestBody String placeName){
         return PlaceRepository.findByPlaceName(placeName);
     }
 }
