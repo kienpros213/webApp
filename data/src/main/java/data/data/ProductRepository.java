@@ -1,6 +1,5 @@
-package data.data.Repository;
+package data.data;
 
-import data.data.Entity.Products;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProductRepository extends CrudRepository<Products, Integer> {

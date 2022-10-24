@@ -1,6 +1,5 @@
-package data.data.Controller;
+package data.data;
 
-import data.data.Entity.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/product")
 public class ProductController {
     @Autowired
-    private data.data.Repository.ProductRepository ProductRepository;
+    private ProductRepository ProductRepository;
 
     @PostMapping(path="/add")
     public @ResponseBody String addNewProduct (@RequestParam String productName, Integer amount, String description){
