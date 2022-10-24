@@ -1,10 +1,10 @@
 export const hcm = require('./hcm.jpg');
-export const hanoi = require('./hanoi.jpg');
-export const danang = require('./danang.jpg');
-export const hue = require('./hue.jpeg');
-export const quangninh = require('./quangninh.jpg');
-export const haiphong = require('./haiphong.jpg');
-export const ninhbinh = require('./ninhbinh.jpg');
-export const quangbinh = require('./quangbinh.jpg');
-export const nhatrang = require('./nhatrang.jpg');
+export const hn = require('./hanoi.jpg');
+export const dn = require('./danang.jpg');
+export const h = require('./hue.jpeg');
+export const qn = require('./quangninh.jpg');
+export const hp = require('./haiphong.jpg');
+export const nb = require('./ninhbinh.jpg');
+export const qb = require('./quangbinh.jpg');
+export const nt = require('./nhatrang.jpg');
 

@@ -26,9 +26,9 @@ public class PlaceController {
         return PlaceRepository.findAll();
     }
 
-    @PostMapping(path = "/findPlace")
-    public @ResponseBody Place findPlace(@RequestParam Integer id){
-         Optional<Place> placeList =  PlaceRepository.findById(id);
+    @GetMapping(path = "/findPlace")
+    public @ResponseBody Place findPlace(@RequestBody String id){
+         Optional<Place> placeList =  PlaceRepository.findById(Integer.parseInt(id));
          Place place = placeList.get();
          return place;
     }

@@ -4,7 +4,7 @@ import {hcm} from '../components/image/imageList'
 import { VStack } from '@chakra-ui/react';
 import { Stack, Box } from '@chakra-ui/react';
 
-function PlaceDetail(){
+function Test(){
 
     const [place, setPlace] = useState([]);
 
@@ -21,13 +21,13 @@ function PlaceDetail(){
 
         let data = {id: placeId};
 
-        fetch("http://localhost:8080/place/findPlace", {
-        method: "GET",
+        fetch("http://localhost:8080/place/addPlace", {
+        method: "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
         })
         .then(res => {console.log("Request complete! response:", res);})
-        .then( (lmao) => console.log(lmao))
+        .then( (lmao) => console.log(lmao[0].id))
 
     }
         
@@ -55,4 +55,4 @@ function PlaceDetail(){
     );
 }
 
-export default PlaceDetail;
+export default Test;
