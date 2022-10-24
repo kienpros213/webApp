@@ -1,7 +1,6 @@
 package webApp.restapi.Entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,13 +10,14 @@ public class Place {
 
     @Id
     @GeneratedValue
+    @JsonProperty("id")
     private Integer id;
     @JsonProperty("placeName")
     private String placeName;
     @JsonProperty("description")
     private String description;
-    @JsonProperty("location")
-    private String location;
+    @JsonProperty("imgName")
+    private String imgName;
 
     public Integer getId() {
         return id;
@@ -39,15 +39,15 @@ public class Place {
         return description;
     }
 
-    public void setDescription(String desc) {
-        this.description = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getLocation() {
-        return location;
+    public String getImgName() {
+        return imgName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 }

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import webApp.restapi.Repository.PlaceRepository;
 import webApp.restapi.Entities.Place;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping(path="/place")
 public class PlaceController {
@@ -22,5 +24,12 @@ public class PlaceController {
     @GetMapping(path = "/allPlaces")
     public @ResponseBody Iterable<Place> getAllPlaces(){
         return PlaceRepository.findAll();
+    }
+
+    @PostMapping(path = "/findPlace")
+    public @ResponseBody Place findPlace(@RequestParam Integer id){
+         Optional<Place> placeList =  PlaceRepository.findById(id);
+         Place place = placeList.get();
+         return place;
     }
 }

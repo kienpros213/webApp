@@ -6,12 +6,12 @@ function AddPlace(){
 
     function addPlace(){
         const placeName = document.getElementById('placeName').value;
-        const description = document.getElementById('desc').value;
-        const location = document.getElementById('location').value;
+        const description = document.getElementById('description').value;
+        const imgName = document.getElementById('imgName').value;
         let data = {
             placeName: placeName,
             description: description,
-            location: location
+            imgName: imgName
         };
 
         fetch("http://localhost:8080/place/addPlace", {
@@ -22,21 +22,21 @@ function AddPlace(){
         console.log("Request complete! response:", res);
         });
 
-        console.log(placeName, location, description);
+        console.log(placeName, imgName, description);
 
     }
 
     function findPlace(){
         const placeName = document.getElementById('placeName').value;
-        const description = document.getElementById('desc').value;
-        const location = document.getElementById('location').value;
+        const description = document.getElementById('description').value;
+        const imgName = document.getElementById('imgName').value;
         let data = {
             placeName: placeName,
             description: description,
-            location: location
+            imgName: imgName
         };
 
-        fetch("http://localhost:8080/place/allPlaces", {
+        fetch("http://localhost:8080/place/addPlace", {
         method: "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
@@ -48,9 +48,9 @@ function AddPlace(){
     }
     return(
         <Box>
-            <Input id = 'placeName' placeHolder = 'place name' />
-            <Input id = 'desc' placeHolder = 'description' />
-            <Input id = 'location' placeHolder = 'location' />
+            <Input id = 'placeName' placeHolder = 'placeName' />
+            <Input id = 'description' placeHolder = 'description' />
+            <Input id = 'imgName' placeHolder = 'imgName' />
             <Button onClick = {addPlace} colorScheme = 'facebook'>add</Button>
             <Button onClick = {findPlace} colorScheme = 'facebook'>search</Button>
         </Box>
