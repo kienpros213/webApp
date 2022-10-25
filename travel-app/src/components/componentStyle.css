@@ -1,6 +1,4 @@
-.imgContainer {
-    background-color: #7FBCD2;
-}
+
 .img{
     z-index: 1;
     transition: transform .2s;

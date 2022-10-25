@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlaceByDetail from "../components/PlaceByDetail";
 import {hcm} from '../components/image/imageList'
 import { VStack } from '@chakra-ui/react';
-import { Stack, Box } from '@chakra-ui/react';
+import { Stack, Box, Text } from '@chakra-ui/react';
 
 function PlaceDetail(){
 
@@ -28,18 +28,17 @@ function PlaceDetail(){
             <Stack direction = 'row'>
                 <VStack p={10} spacing={10} bg = '#abadb0' display='flex' justifyContent='center' w='50%'>
                 {place.map((item)=> (
-                    <a onClick={test} key={item.id}>
                         <PlaceByDetail id = {item.id} img = {hcm} place = {item.placeName} number={item.id} />
-                    </a>
                     )
                 )
             }
                 </VStack>
-                <Stack pos='relative' pt={10} spacing = {310} bg='#abadb0' w='50%'>
-                    <Box pos='fixed' borderRadius={10} bg='#5760de' h = '300px' w = '100%'>
-                        {desc}
+
+                <Stack pos='relative' spacing = '23%' bg='tomato' w='50%'>
+                    <Box overflow='hidden' pos='fixed' borderRadius={10} bg='#5760de' h = '50%' w = '50vw'>
+                        <Text overflowWrap='break-word' paddingY='10' paddingX='10' >{desc}</Text>  
                     </Box>
-                    <Box pos='fixed' borderRadius={10} bg = '#54556b' h = '300px' w = '100%'>
+                    <Box overflow='hidden' p = {10} pos='fixed' borderRadius='0px 0px 10px 10px' bg = '#54556b' h = '50%' w = '50vw'>
                     </Box>
                 </Stack>
             </Stack>
