@@ -8,35 +8,26 @@ function PlaceDetail(){
 
     const [place, setPlace] = useState([]);
 
-    useEffect( ()=> {
+    useEffect( () => {
         fetch('http://localhost:8080/place/allPlaces')
         .then( (response) => response.json() )
         .then( (data) => setPlace(data) );
-        }
+        }, []
     )
 
     function test(e){
         const placeId = e.target.id;
-        console.log(placeId);
-
-        let data = {id: placeId};
-
-        fetch("http://localhost:8080/place/findPlace", {
-        method: "GET",
-        headers: {'Content-Type': 'application/json'}, 
-        body: JSON.stringify(data)
-        })
-        .then(res => {console.log("Request complete! response:", res);})
-        .then( (lmao) => console.log(lmao))
-
-    }
-        
+        fetch("http://localhost:8080/place/findPlace?id="+placeId+"")
+        .then( (response) => response.json() )
+        .then( (data) => console.log(data) );
+        }
+           
     return(
         <Box bg = '#abadb0'>
             <Stack direction = 'row'>
                 <VStack p={10} spacing={10} bg = '#abadb0' display='flex' justifyContent='center' w='50%'>
                 {place.map((item)=> (
-                    <a key={item.id} onClick = {test}>
+                    <a onClick={test} key={item.id}>
                         <PlaceByDetail id = {item.id} img = {hcm} place = {item.placeName} number={item.id} />
                     </a>
                     )

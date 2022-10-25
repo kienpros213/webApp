@@ -27,7 +27,7 @@ public class PlaceController {
     }
 
     @GetMapping(path = "/findPlace")
-    public @ResponseBody Place findPlace(@RequestBody String id){
+    public @ResponseBody Place findPlace(@RequestParam String id){
          Optional<Place> placeList =  PlaceRepository.findById(Integer.parseInt(id));
          Place place = placeList.get();
          return place;
