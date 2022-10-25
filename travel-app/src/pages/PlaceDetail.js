@@ -15,11 +15,12 @@ function PlaceDetail(){
         }, []
     )
 
+    const [desc, setDesc] = useState("lmao")
     function test(e){
         const placeId = e.target.id;
         fetch("http://localhost:8080/place/findPlace?id="+placeId+"")
         .then( (response) => response.json() )
-        .then( (data) => console.log(data) );
+        .then( (data) => setDesc(data.description) );
         }
            
     return(
@@ -36,7 +37,7 @@ function PlaceDetail(){
                 </VStack>
                 <Stack pos='relative' pt={10} spacing = {310} bg='#abadb0' w='50%'>
                     <Box pos='fixed' borderRadius={10} bg='#5760de' h = '300px' w = '100%'>
-                        lmao
+                        {desc}
                     </Box>
                     <Box pos='fixed' borderRadius={10} bg = '#54556b' h = '300px' w = '100%'>
                     </Box>
