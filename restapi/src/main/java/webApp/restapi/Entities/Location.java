@@ -14,6 +14,9 @@ public class Location {
     private Integer locationId;
     @JsonProperty("locationName")
     private String locationName;
+
+    @JsonProperty("placeName")
+    private String placeName;
     @JsonProperty("description")
     private String description;
     @JsonProperty("imgName")
@@ -33,6 +36,14 @@ public class Location {
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
     }
 
     public String getDescription() {
