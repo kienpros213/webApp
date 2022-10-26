@@ -3,7 +3,8 @@ import { Routes ,Route } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage';
 import AddPlace from './pages/AddPlace';
-import PlaceList from './pages/PlaceList';
+import LocationList from './pages/LocationList';
+import AddLocation from './pages/AddLocation';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       {/*Router*/}
       <Routes>
         <Route path='/' element = {<MainPage/>} ></Route>
-        <Route path='/placeDetail' element = {<PlaceList/>} />
+        <Route path='/locationList' element = {<LocationList/>} />
         <Route path='/addPlace' element = {<AddPlace/>} />
+        <Route path='/addLocation' element = {<AddLocation/>} />
       </Routes>
     </ChakraProvider>
   );

@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import {Box, Stack, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Radio, RadioGroup, propNames } from "@chakra-ui/react";
+import {Box, Stack, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Radio, RadioGroup } from "@chakra-ui/react";
 
 function RadioButton(props){
     const [value, setValue] = useState('1')

@@ -7,7 +7,7 @@ function PlaceByDetail(props){
             spacing = {0}
             className="imgContainer"
             h='100%'
-            w='40vw'
+            w='35vw'
             borderRadius={10}
             overflow='hidden'>
                 {/* Image */}
@@ -21,12 +21,13 @@ function PlaceByDetail(props){
                 </Image>
                 {/* Text */}
                 <Box
+                fontSize='xl'
                 id={props.id}
                 h = '100%'
                 w = '100%'
                 bg='white'
                 className = 'par'
-                color='black' p={3}>
+                color='black' p={5}>
                     {props.place}<br/>
                     {props.number}
                 </Box>

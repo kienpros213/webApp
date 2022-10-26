@@ -29,13 +29,13 @@ function MainPage(){
                             <Button colorScheme='whatsapp' > Explore more </Button>
                         </Stack>
                         <Stack direction='row'>
-                            <Place h = '200px' w ='200px' imgName = {hcm} placeName = 'Hồ Chí Minh'/>
-                            <Place h = '200px' w ='200px' imgName = {hn} placeName = 'Hà Nội'/>
-                            <Place h = '200px' w ='200px' imgName = {qn} placeName = 'Quảng Ninh'/>
-                            <Place h = '200px' w ='200px' imgName = {hp} placeName = 'Hải Phòng'/>
-                            <Place h = '200px' w ='200px' imgName = {dn} placeName = 'Đà Nẵng'/>
-                            <Place h = '200px' w ='200px' imgName = {h} placeName = 'Huế'/>
-                            <Place h = '200px' w ='200px' imgName = {nb} placeName = 'Ninh Bình'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {hcm} placeName = 'Hồ Chí Minh'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {hn} placeName = 'Hà Nội'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {qn} placeName = 'Quảng Ninh'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {hp} placeName = 'Hải Phòng'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {dn} placeName = 'Đà Nẵng'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {h} placeName = 'Huế'/>
+                            <Place href = '/placeDetail' h = '200px' w ='200px' imgName = {nb} placeName = 'Ninh Bình'/>
                         </Stack>
                     </Stack>
                     <Box h='100%' display = 'flex' justifyContent = 'center'>
