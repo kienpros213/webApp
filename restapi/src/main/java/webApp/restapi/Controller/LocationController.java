@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import webApp.restapi.Repository.LocationRepository;
 import webApp.restapi.Entities.Location;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,12 +30,7 @@ public class LocationController {
     }
 
     @GetMapping(path = "/findLocation")
-    public @ResponseBody Location findLocation(@RequestParam String placeName){
-        //Optional<Location> locationList =  LocationRepository.findById(Integer.parseInt(id));
-        //Location location = locationList.get();
-        //return location;
-        List<Location> locationList =  LocationRepository.findByplaceName(placeName);
-        Location location = locationList.get(0);
-        return location;
+    public @ResponseBody List<Location> findLocation(@RequestParam String placeName){
+        return LocationRepository.findByplaceName(placeName);
     }
 }
