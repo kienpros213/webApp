@@ -33,4 +33,9 @@ public class LocationController {
     public @ResponseBody List<Location> findLocation(@RequestParam String placeName){
         return LocationRepository.findByplaceName(placeName);
     }
+
+    @GetMapping(path = "/findLocationById")
+    public @ResponseBody Optional<Location> findLocationById(@RequestParam String id){
+        return LocationRepository.findById(Integer.parseInt(id));
+    }
 }

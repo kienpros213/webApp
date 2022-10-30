@@ -1,11 +1,15 @@
 import React from "react";
 import {Text, Image,Stack} from '@chakra-ui/react';
 
+
 function Place(props){
+
+    const link = '/locationList/'+props.name+''
+
     return(
         <Stack
             as = 'a'
-            href = '/placeDetail'
+            href = {link}
             className="imgContainer"
             borderRadius={10}
             overflow='hidden'

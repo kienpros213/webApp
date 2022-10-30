@@ -3,14 +3,14 @@ import { Stack, Box, Text, Divider, Input } from "@chakra-ui/react";
 import PlaceByDetail from '../components/PlaceByDetail'
 import RadioButton from "../components/RadioList";
 import {hcm} from '../components/image/imageList'
-
+import { useParams } from "react-router-dom";
 function LocationList(){
-
+    const {location} = useParams();
 
     const [place, setPlace] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:8080/location/allLocation')
+        fetch('http://localhost:8080/location/findLocation?placeName='+location+'')
         .then( (response) => response.json() )
         .then( (data) => setPlace(data) );
         }, []
@@ -18,8 +18,8 @@ function LocationList(){
 
     const [desc, setDesc] = useState("lmao")
     function fetchData(e){
-        const placeId = e.target.id;
-        fetch("http://localhost:8080/place/findPlace?id="+placeId+"")
+        const locationId = e.target.id;
+        fetch("http://localhost:8080/location/findLocationById?id="+locationId+"")
         .then( (response) => response.json() )
         .then( (data) => setDesc(data.description) );
         }
@@ -39,7 +39,7 @@ function LocationList(){
                     <Stack>
                         {place.map((item)=> (
                             <a onClick={fetchData}>
-                                <PlaceByDetail  id = {item.id} img = {hcm} place = {item.locationName} number={item.id} />
+                                <PlaceByDetail id = {item.locationId} img = {hcm} place = {item.locationName} number={item.id} />
                             </a>
                                 )
                             )

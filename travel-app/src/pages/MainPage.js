@@ -29,13 +29,13 @@ function MainPage(){
                             <Button colorScheme='whatsapp' > Explore more </Button>
                         </Stack>
                         <Stack direction='row'>
-                            <Place h = '200px' w ='200px' imgName = {hcm} placeName = 'Hồ Chí Minh'/>
-                            <Place h = '200px' w ='200px' imgName = {hn} placeName = 'Hà Nội'/>
-                            <Place h = '200px' w ='200px' imgName = {qn} placeName = 'Quảng Ninh'/>
-                            <Place h = '200px' w ='200px' imgName = {hp} placeName = 'Hải Phòng'/>
-                            <Place h = '200px' w ='200px' imgName = {dn} placeName = 'Đà Nẵng'/>
-                            <Place h = '200px' w ='200px' imgName = {h} placeName = 'Huế'/>
-                            <Place h = '200px' w ='200px' imgName = {nb} placeName = 'Ninh Bình'/>
+                            <Place name = 'ho chi minh' h = '200px' w ='200px' imgName = {hcm} placeName = 'Hồ Chí Minh'/>
+                            <Place name = 'ha noi' h = '200px' w ='200px' imgName = {hn} placeName = 'Hà Nội'/>
+                            <Place name = 'quang ninh' h = '200px' w ='200px' imgName = {qn} placeName = 'Quảng Ninh'/>
+                            <Place name = 'hai phong' h = '200px' w ='200px' imgName = {hp} placeName = 'Hải Phòng'/>
+                            <Place name = 'da nang' h = '200px' w ='200px' imgName = {dn} placeName = 'Đà Nẵng'/>
+                            <Place name = 'hue' h = '200px' w ='200px' imgName = {h} placeName = 'Huế'/>
+                            <Place name = 'ninh binh' h = '200px' w ='200px' imgName = {nb} placeName = 'Ninh Bình'/>
                         </Stack>
                     </Stack>
                     <Box h='100%' display = 'flex' justifyContent = 'center'>

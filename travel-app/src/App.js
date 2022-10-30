@@ -14,7 +14,7 @@ function App() {
       {/*Router*/}
       <Routes>
         <Route path='/' element = {<MainPage/>} ></Route>
-        <Route path='/locationList' element = {<LocationList/>} />
+        <Route path='/locationList/:location' element = {<LocationList/>} />
         <Route path='/addPlace' element = {<AddPlace/>} />
         <Route path='/addLocation' element = {<AddLocation/>} />
       </Routes>
