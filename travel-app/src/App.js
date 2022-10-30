@@ -1,11 +1,11 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider} from '@chakra-ui/react';
 import { Routes ,Route } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage';
 import AddPlace from './pages/AddPlace';
 import LocationList from './pages/LocationList';
 import AddLocation from './pages/AddLocation';
-
+import Map from './components/Map';
 
 function App() {
   return (
@@ -20,10 +20,8 @@ function App() {
       </Routes>
     </ChakraProvider>
   );
-
 }
-//<Search/>
-//<SearchBy />
+
 
 
 export default App;
