@@ -1,11 +1,11 @@
 import { ChakraProvider} from '@chakra-ui/react';
-import { Routes ,Route } from 'react-router-dom';
+import { Routes ,Route} from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage';
 import AddPlace from './pages/AddPlace';
 import LocationList from './pages/LocationList';
 import AddLocation from './pages/AddLocation';
-import Map from './components/Map';
+import Example from './Test';
 
 function App() {
   return (

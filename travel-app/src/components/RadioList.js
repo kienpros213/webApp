@@ -1,7 +1,8 @@
 import {React, useState} from "react";
 import {Box, Stack, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Radio, RadioGroup } from "@chakra-ui/react";
 
-function RadioButton(props){
+function RadioButton(props, e){
+
     const [value, setValue] = useState('1')
 
     return(
@@ -14,7 +15,7 @@ function RadioButton(props){
                     <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4}>
-                <RadioGroup onChange={setValue} value={value}>
+                <RadioGroup onChange={setValue} onClick = {()=>{console.log(value)}}  value={value}>
                     <Stack direction='column'>
                         <Radio value='1'>Hồ Chí Minh</Radio>
                         <Radio value='2'>Hà Nội</Radio>

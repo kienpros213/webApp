@@ -5,6 +5,9 @@ import RadioButton from "../components/RadioList";
 import {hcm} from '../components/image/imageList'
 import { useParams } from "react-router-dom";
 function LocationList(){
+
+    const [value, setValue] = useState('2')
+
     const {location} = useParams();
 
     const [place, setPlace] = useState([]);
@@ -34,7 +37,7 @@ function LocationList(){
                             <Text fontSize='3xl'> Bộ lọc </Text>
                             <Divider orientation='horizontal' />
                             <Input placeholder="Tìm theo điểm đến" bg = 'white'/>
-                            <RadioButton sectionName = 'Theo vị trí'/>
+                            <RadioButton setChangeValue = {setValue} value = {value} sectionName = 'Theo vị trí'/>
                     </Stack>
                     <Stack>
                         {place.map((item)=> (
