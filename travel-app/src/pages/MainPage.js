@@ -48,7 +48,6 @@ function MainPage(){
                                 <Place h = '300px' w ='300px' imgName = {langbac} placeName = 'Lăng Bác'/>
                                 <Place h = '300px' w ='300px' imgName = {hoguom} placeName = 'Hồ Gươm'/>
                                 <Place h = '300px' w ='300px' imgName = {vanmieu} placeName = 'Văn Miếu'/>
-                                <Place h = '300px' w ='300px' imgName = {phoco} placeName = 'Phố Cổ'/>
                             </Stack>
                         </Stack>
                     </Box>

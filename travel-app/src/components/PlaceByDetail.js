@@ -15,6 +15,8 @@ function PlaceByDetail(props){
                     id={props.id}
                     maxH={230}
                     maxW={300}
+                    minH={230}
+                    minW={300}
                     className = 'img'
                     src={props.img}
                     alt="lmao">

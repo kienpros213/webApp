@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Box, Button } from '@chakra-ui/react';
+import { Input, Box, Button, Stack } from '@chakra-ui/react';
 
 
 function AddPlace(){
@@ -27,11 +27,20 @@ function AddPlace(){
     }
     return(
         <Box>
-            <Input id = 'placeName' placeHolder = 'placeName' />
-            <Input id = 'description' placeHolder = 'description' />
-            <Input id = 'imgName' placeHolder = 'imgName' />
-            <Button onClick = {addPlace} colorScheme = 'facebook'>add</Button>
-            <Button colorScheme = 'facebook'>search</Button>
+
+        <>
+            <Box bg = '#B9E0FF' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
+                <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
+                    <Input bg='white' id = 'placeName' placeHolder = 'placeName' />
+                    <Input bg='white' id = 'description' placeHolder = 'description' />
+                    <Input bg='white' id = 'imgName' placeHolder = 'imgName' />
+
+                    <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
+                        <Button onClick = {addPlace} colorScheme = 'facebook'>add</Button>
+                    </Stack> 
+                </Stack>
+            </Box>
+        </>
         </Box>
     )
 }
