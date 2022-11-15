@@ -13,10 +13,11 @@ function PlaceByDetail(props){
                 {/* Image */}
                 <Image
                     id={props.id}
-                    maxH={230}
-                    maxW={300}
-                    minH={230}
-                    minW={300}
+                    maxH={250}
+                    maxW={250}
+                    minH={250}
+                    minW={250}
+                    objectFit = 'fill'
                     className = 'img'
                     src={props.img}
                     alt="lmao">

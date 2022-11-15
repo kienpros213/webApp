@@ -55,7 +55,7 @@ function AddLocation(){
 
     return(
         <>
-            <Box bg = '#B9E0FF' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
+            <Box pt={10} bg = '#B9E0FF' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
                 <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
                     <Input bg='white' id = 'placeName' placeHolder = 'placeName' />
                     <Input bg='white' id = 'locationName' placeHolder = 'locationName' />
@@ -75,39 +75,3 @@ function AddLocation(){
 
 export default AddLocation;
 
-function addLocation(){
-
-    const placeName = document.getElementById('placeName').value;
-    const locationName = document.getElementById('locationName').value;
-    const description = document.getElementById('description').value;
-    const imgName = document.getElementById('imgName').value;
-    
-    if (placeName === null || placeName === "", locationName === null || locationName === "", description === null || description === "", imgName === null || imgName === "") {
-        return false
-      }
-
-    let data = {
-        placeName : placeName,
-        locationName: locationName,
-        description: description,
-        imgName: imgName
-    };
-
-    fetch("http://localhost:8080/location/addLocation", {
-    method: "POST",
-    headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify(data)
-    }).then(res => {
-    console.log("Request complete! response:", res);
-    });
-
-    console.log(locationName, imgName, description);
-}
-
-function search(){
-    const placeName = document.getElementById('placeName').value;
-    console.log(placeName)
-    fetch("http://localhost:8080/location/findLocation?placeName="+placeName+"")
-    .then( (response) => response.json() )
-    .then( (data) => console.log(data) );
-    }
