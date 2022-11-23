@@ -8,6 +8,7 @@ function LocationList(){
 
     const [place, setPlace] = useState([]);
 
+    //render place list
     useEffect( () => {
         fetch('http://localhost:8080/location/findLocation?placeName='+location+'')
         .then( (response) => response.json() )
@@ -15,6 +16,7 @@ function LocationList(){
         }, []
     )
 
+    //fetch location data
     const [desc, setDesc] = useState("lmao")
     function fetchData(e){
         const locationId = e.target.id;
@@ -23,8 +25,10 @@ function LocationList(){
         .then( (data) => setDesc(data.description) );
         }
     
+    //Sort location
     const [placeName, setPlaceName] = useState({location})
     useEffect( () => {
+        window.scrollTo(0, 0)
         fetch('http://localhost:8080/location/findLocation?placeName='+placeName+'')
         .then( (response) => response.json() )
         .then( (data) => setPlace(data) );
@@ -32,7 +36,7 @@ function LocationList(){
     )
 
     return(
-        <Stack direction='row' w = '100vw' h = '100vw'>
+        <Stack bg = '#b6d1e3' direction='row' w = '100vw' h = '100vw'>
             {/* left */}
             <Stack pt={10} bg = '#b6d1e3' w = '50vw' h = '100vw'>
                 <Stack bg = '#b6d1e3' direction='row' spacing = {5} display='flex' justifyContent = 'center'>             
@@ -74,12 +78,12 @@ function LocationList(){
             </Stack>
 
             {/* right */}
-                <Stack direction='column' bg = 'black' w = '50vw' h = '100vw' pos='fixed' left = '50vw'>
-                    <Box bg = '#3277e6' h='25%'>
+                <Stack pt={10} direction='column' bg = '#b6d1e3' w = '50vw' h = '100vw' pos='fixed' left = '50vw'>
+                    <Box overflow='hidden' overflowY= 'scroll' borderRadius='10px' borderColor='black' borderWidth = '2px' bg = '#b6d1e3' h='25%'>
                         <Box w='100%' fontSize='4xl' textAlign = 'center'> Description </Box>
                         <Text overflowWrap='break-word' fontSize='2xl' paddingY='10' paddingX='10'> {desc} </Text>
                     </Box>
-                    <Box bg = '#e632b3' h='25%' ></Box>
+                    <Box borderRadius='10px' borderColor='black' borderWidth = '2px' bg = '#b6d1e3' h='25%' ></Box>
                 </Stack>
         </Stack>
     );
