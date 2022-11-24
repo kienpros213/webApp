@@ -6,6 +6,7 @@ import AddPlace from './pages/AddPlace';
 import LocationList from './pages/LocationList';
 import AddLocation from './pages/AddLocation';
 import Example from './Test';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/locationList/:location' element = {<LocationList/>} />
         <Route path='/addPlace' element = {<AddPlace/>} />
         <Route path='/addLocation' element = {<AddLocation/>} />
+        <Route path='/adminPage' element = {<AdminPage/>} />
       </Routes>
     </ChakraProvider>
   );

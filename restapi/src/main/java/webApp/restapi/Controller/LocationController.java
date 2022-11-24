@@ -38,4 +38,10 @@ public class LocationController {
     public @ResponseBody Optional<Location> findLocationById(@RequestParam String id){
         return LocationRepository.findById(Integer.parseInt(id));
     }
+    @CrossOrigin
+    @DeleteMapping(path = "/deleteLocation")
+    public @ResponseBody String deleteLocation(@RequestParam String id){
+        LocationRepository.deleteById(Integer.parseInt(id));
+        return("deleted");
+    }
 }
