@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import view from '../components/image/view.jpg';
 import { Image, Stack, Box, Text, Button } from '@chakra-ui/react'
 import Place from "../components/Place";
@@ -10,7 +9,6 @@ function MainPage(){
             <Stack>
                 {/* 1st Section */}
                 <Box display = 'flex' justifyContent = 'center'>
-                    <NavBar/>
                     <Image maxH='100vw' maxW='100vw' src={view}/>
                 </Box>
 
@@ -38,7 +36,7 @@ function MainPage(){
                             <Place name = 'ninh binh' h = '200px' w ='200px' imgName = {nb} placeName = 'Ninh Bình'/>
                         </Stack>
                     </Stack>
-                    <Box h='100%' display = 'flex' justifyContent = 'center'>
+                    <Box display = 'flex' justifyContent = 'center'>
                         <Stack direction = 'column' display='flex' justifyContent = 'center'>
                             <Text textAlign='center' fontSize='5xl' > Explore Vietnam </Text>
                             <Stack direction='row' >

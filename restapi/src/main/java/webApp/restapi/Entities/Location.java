@@ -1,9 +1,7 @@
 package webApp.restapi.Entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Location {
@@ -14,7 +12,6 @@ public class Location {
     private Integer locationId;
     @JsonProperty("locationName")
     private String locationName;
-
     @JsonProperty("placeName")
     private String placeName;
     @JsonProperty("description")

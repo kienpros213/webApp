@@ -1,7 +1,9 @@
 import {React, useState, useEffect} from "react";
-import { Stack, Box, Text, Divider, Input, Button, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from "@chakra-ui/react";
+import { Stack, Box, Button} from "@chakra-ui/react";
 import PlaceByDetail from '../components/PlaceByDetail'
 import { useParams, Link } from "react-router-dom";
+import SortAccordion from "../components/SortAccordion";
+import LocationDescription from "../components/LocationDescription";
 function LocationList(){
 
     const {location} = useParams();
@@ -13,19 +15,19 @@ function LocationList(){
         fetch('http://localhost:8080/location/findLocation?placeName='+location+'')
         .then( (response) => response.json() )
         .then( (data) => setPlace(data) );
-        }, []
+        }, [location]
     )
 
-    //fetch location data
-    const [desc, setDesc] = useState("lmao")
+    //fetch location desctiption
+    const [content, setContent] = useState("")
     function fetchData(e){
         const locationId = e.target.id;
         fetch("http://localhost:8080/location/findLocationById?id="+locationId+"")
         .then( (response) => response.json() )
-        .then( (data) => setDesc(data.description) );
+        .then( (data) => setContent(data) );
         }
     
-    //Sort location
+    //requery location
     const [placeName, setPlaceName] = useState({location})
     useEffect( () => {
         window.scrollTo(0, 0)
@@ -35,40 +37,27 @@ function LocationList(){
         },[placeName]
     )
 
+    //place sort button
+    const [allPlace, setAllPlace] = useState([]);
+    useEffect( () => {
+        fetch('http://localhost:8080/place/allPlaces')
+        .then( (response) => response.json() )
+        .then( (data) => setAllPlace(data) );
+        }, []
+    )
     return(
-        <Stack bg = '#b6d1e3' direction='row' w = '100vw' h = '100vw'>
+        <Stack pt = '7vh' bg = '#b6d1e3' direction='row' w = '100vw' h = '100vw'>
             {/* left */}
             <Stack pt={10} bg = '#b6d1e3' w = '50vw' h = '100vw'>
                 <Stack bg = '#b6d1e3' direction='row' spacing = {5} display='flex' justifyContent = 'center'>             
                     <Stack dir="column" pt = {10} display='flex' alignItems= 'center'>
-
-                            {/*button*/}
-                            <Accordion >
-                                <AccordionItem textAlign='center'>
-                                        <Text fontSize='3xl'> Bộ lọc </Text>
-                                        <Divider orientation='horizontal' />
-                                        <Input placeholder="Tìm theo điểm đến" bg = 'white'/>
-                                    <AccordionButton>
-                                        <Box flex='1' textAlign='center'>
-                                            tìm theo vị trí
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    <AccordionPanel pb={4}>
-                                        <Stack direction='column'>
-                                            <Button onClick={()=>{setPlaceName("ha noi")}}>Hà Nội</Button>
-                                            <Button onClick={()=>{setPlaceName("da nang")}}>Đà Nẵng</Button>
-                                            <Button onClick={()=>{setPlaceName("ho chi minh")}}>Hồ Chí Minh</Button>
-                                        </Stack>
-                                    </AccordionPanel>
-                                </AccordionItem>
-                            </Accordion>
-                            {/*button*/}
+                        {/*Sort ComboBox */}
+                        <SortAccordion allPlace={allPlace} setPlaceName = {()=>{setPlaceName(document.getElementById('placeName').value)}}/>
                     </Stack>
-                    <Stack bg = '#b6d1e3'>
+                    <Stack bg = '#b6d1e3' spacing = {5}>
                         {place.map((item)=> (
                             <Link key = {item.locationId} onClick={fetchData}>
-                                <PlaceByDetail  id = {item.locationId} img = {item.imgName} place = {item.locationName} number={item.id} />
+                                <PlaceByDetail id = {item.locationId} img = {item.imgName} place = {item.locationName} number={item.id} />
                             </Link>
                                 )
                             )
@@ -79,11 +68,10 @@ function LocationList(){
 
             {/* right */}
                 <Stack pt={10} direction='column' bg = '#b6d1e3' w = '50vw' h = '100vw' pos='fixed' left = '50vw'>
-                    <Box overflow='hidden' overflowY= 'scroll' borderRadius='10px' borderColor='black' borderWidth = '2px' bg = '#b6d1e3' h='25%'>
-                        <Box w='100%' fontSize='4xl' textAlign = 'center'> Description </Box>
-                        <Text overflowWrap='break-word' fontSize='2xl' paddingY='10' paddingX='10'> {desc} </Text>
+                    <Box boxShadow='dark-lg' overflow='hidden' overflowY= 'scroll' borderRadius='10px' bg = 'white' h='25%'>
+                        <LocationDescription placeName = {content.placeName} locationName = {content.locationName} body = {content.description} imageAddress = {content.imgName} />
                     </Box>
-                    <Box borderRadius='10px' borderColor='black' borderWidth = '2px' bg = '#b6d1e3' h='25%' ></Box>
+                    <Box boxShadow='dark-lg' borderRadius='10px' bg = 'white' h='25%' ></Box>
                 </Stack>
         </Stack>
     );

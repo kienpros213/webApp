@@ -4,6 +4,7 @@ import {Box, Image,HStack} from '@chakra-ui/react';
 function PlaceByDetail(props){
     return(
             <HStack
+            boxShadow='dark-lg'
             spacing = {0}
             className="imgContainer"
             h='100%'
