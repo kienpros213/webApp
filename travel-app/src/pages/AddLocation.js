@@ -1,9 +1,19 @@
-import React from "react";
-import { Input, Box, Button, Stack, useToast } from '@chakra-ui/react';
+import {React, useState, useEffect} from "react";
+import { Input, Box, Button, Stack, useToast, Select } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
+import PlaceByDetail from "../components/PlaceByDetail";
 
 function AddLocation(){
 
+    const [place, setPlace] = useState([]);
 
+    //render place list
+    useEffect( () => {
+        fetch('http://localhost:8080/place/allPlaces')
+        .then( (response) => response.json() )
+        .then( (data) => setPlace(data) );
+        }, []
+    )
 
     const toast = useToast()
 
@@ -57,11 +67,16 @@ function AddLocation(){
         <>
             <Box pt={10} bg = '#B9E0FF' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
                 <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
-                    <Input bg='white' id = 'placeName' placeHolder = 'placeName' />
+                    <Select id = 'placeName' bg = 'white'>
+                        {place.map((item)=> (
+                                <option> {item.placeName} </option>
+                                )
+                            )
+                        }
+                    </Select>
                     <Input bg='white' id = 'locationName' placeHolder = 'locationName' />
                     <Input bg='white' id = 'description' placeHolder = 'description' />
                     <Input bg='white' id = 'imgName' placeHolder = 'imgName' />
-
                     <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
                         <Button onClick = {check} colorScheme = 'facebook'>add</Button>
                         <Button onClick={check} colorScheme = 'facebook'>search</Button>
