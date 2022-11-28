@@ -1,7 +1,4 @@
-import {React, useState, useEffect} from "react";
-import {
-    Table,
-    Text,
+import { Text,Table,
     Thead,
     Tbody,
     Tr,
@@ -9,10 +6,11 @@ import {
     Td,
     Box,
     Stack,
-    Button,
-  } from '@chakra-ui/react'
+    Button, } from "@chakra-ui/react";
 
-function AdminList(){
+import {React, useState, useEffect} from "react";
+
+function Test(){
 
     const [selected, setSelected] = useState("lmao");
     const [place, setPlace] = useState([]);
@@ -43,10 +41,10 @@ function AdminList(){
             console.log(id);
     }
 
-        return(
-        <Stack bg = '#B9E0FF' direction='column' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
+    return(
+        <Stack bg = '#B9E0FF' direction='column' display='flex' justifyContent = 'center' alignItems = 'center'>
             <Text fontSize = '4xl' > Admin Page </Text>
-            <Text fontSize = '2xl' > selected location id: {selected} </Text>
+            <Text fontSize = '2xl' > selected location id: </Text>
             <Box overflow='hidden' border='1px' borderRadius = '10px' overflowY= 'scroll' h='40vh' maxH='40vh' maxW='40vw'>
                 <Table variant='striped'>
                     <Thead>
@@ -69,10 +67,9 @@ function AdminList(){
                     </Tbody>
                 </Table>
             </Box>
-            <Button onClick={deleteLocation} > Delete </Button>
+            <Button>lmao</Button>
         </Stack>
-    );
+    )
 }
 
-export default AdminList;
-
+export default Test;

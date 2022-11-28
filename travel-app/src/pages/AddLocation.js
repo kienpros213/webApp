@@ -63,7 +63,7 @@ function AddLocation(){
 
     return(
         <>
-                <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
+                <Stack bg = '#B9E0FF' direction='column' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
                     <Select id = 'placeName' bg = 'white'>
                         {place.map((item)=> (
                                 <option> {item.placeName} </option>

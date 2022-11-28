@@ -1,23 +1,16 @@
 import {React, useState, useEffect} from "react";
-import {
-    Table,
-    Text,
-    Thead,
-    Tbody,
-    Tr,
-    Th,
-    Td,
-    Box,
-    Stack,
-    Button,
-  } from '@chakra-ui/react'
-import AddLocation from "./AddLocation";
+import {Stack} from '@chakra-ui/react'
 import AdminList from "../components/AdminList";
+import AddLocation from "./AddLocation";
+import Test from "../components/Test";
 
 function AdminPage(){
 
     return(
-        <AdminList/>
+        <Stack>
+            <Test/>
+            <AdminList/>
+        </Stack>
     );
 }
 
