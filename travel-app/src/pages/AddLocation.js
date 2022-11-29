@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react";
-import { Input, Box, Button, Stack, useToast, Select } from '@chakra-ui/react';
+import { Input, Box, Button, Stack, useToast, Select, Text } from '@chakra-ui/react';
 
 function AddLocation(){
 
@@ -57,14 +57,15 @@ function AddLocation(){
                 });
 
                 console.log(locationName, imgName, description);
-            }
+            }   
             
     }
 
     return(
-        <Box pt={10} bg = '#B9E0FF' h='100vh'>
-                <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
-                    <Select id = 'placeName' bg = 'white'>
+        <Box display='flex' pt = '1vh'>
+                <Stack direction='column' bg = 'white' borderRadius = '10px' display = 'flex' justifyContent='center' p = {5} h='35vh' w='40vh'>
+                    <Text fontSize = 'xl' textAlign = 'center'> Thêm địa điểm </Text>
+                    <Select id = 'placeName'>
                         {place.map((item)=> (
                                 <option> {item.placeName} </option>
                                 )
@@ -78,7 +79,6 @@ function AddLocation(){
                         <Button onClick = {check} colorScheme = 'facebook'>add</Button>
                     </Stack> 
                 </Stack>
-
         </Box>
     )
 }

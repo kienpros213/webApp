@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Box, Button, Stack } from '@chakra-ui/react';
+import { Input, Box, Button, Stack, Text } from '@chakra-ui/react';
 
 
 function AddPlace(){
@@ -26,22 +26,18 @@ function AddPlace(){
 
     }
     return(
-        <Box>
-
-        <>
-            <Box bg = '#B9E0FF' h='100vh' display='flex' justifyContent = 'center' alignItems = 'center'>
-                <Stack direction='column' bg = '#8D9EFF' borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='30vh' w='40vh'>
-                    <Input bg='white' id = 'placeName' placeHolder = 'placeName' />
-                    <Input bg='white' id = 'description' placeHolder = 'description' />
-                    <Input bg='white' id = 'imgName' placeHolder = 'imgName' />
+            <Box display='flex'>
+                <Stack direction='column' bg = 'white' borderRadius = {10} display = 'flex' justifyContent='center' p = {5} h='35vh' w='40vh'>
+                    <Text textAlign='center' fontSize='xl'> Thêm tỉnh thành </Text>
+                    <Input bg='white' id = 'placeName' placeHolder = 'Tên tỉnh thành' />
+                    <Input bg='white' id = 'description' placeHolder = 'mô tả' />
+                    <Input bg='white' id = 'imgName' placeHolder = 'địa chỉ ảnh' />
 
                     <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
                         <Button onClick = {addPlace} colorScheme = 'facebook'>add</Button>
                     </Stack> 
                 </Stack>
             </Box>
-        </>
-        </Box>
     )
 }
 

@@ -9,9 +9,7 @@ function NavBar(){
     return(
             <HStack p={5} pos='absolute' bg='transparent' spacing={5} display='flex' justifyContent='center'>
                 <LinkButton link = "/" content = "Trang chủ" />
-                <LinkButton link = "/addLocation" content = "Thêm địa điểm" />
-                <LinkButton link = "/adminPage" content = "Admin Page" />
-                <LinkButton link = "/addPlace" content = "Add Place" />
+                <LinkButton link = "/adminPage" content = "Admin" />
             </HStack>
     );
 }
