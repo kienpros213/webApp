@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react";
-import { Input, Box, Button, Stack, useToast, Select } from '@chakra-ui/react';
+import { Input, Button, Stack, useToast, Select, Text } from '@chakra-ui/react';
 
 function AddLocation(props){
 
@@ -64,6 +64,7 @@ function AddLocation(props){
     return(
         <>
                 <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
+                    <Text fontSize = 'xl' textAlign='center' color = {props.fontColor}> Thêm địa điểm </Text>
                     <Select id = 'placeName' bg = {props.boxColor} color = {props.fontColor}>
                         {place.map((item)=> (
                                 <option> {item.placeName} </option>
@@ -71,9 +72,9 @@ function AddLocation(props){
                             )
                         }
                     </Select>
-                    <Input bg={props.boxColor} id = 'locationName' placeHolder = 'tên địa điểm' />
-                    <Input bg={props.boxColor} id = 'description' placeHolder = 'mô tả' />
-                    <Input bg={props.boxColor} id = 'imgName' placeHolder = 'địa chỉ ảnh' />
+                    <Input bg={props.boxColor} id = 'locationName'  _placeholder={{ color: props.placeHolder }} placeHolder = 'tên địa điểm' />
+                    <Input bg={props.boxColor} id = 'description' _placeholder={{ color: props.placeHolder }} placeHolder = 'mô tả' />
+                    <Input bg={props.boxColor} id = 'imgName' _placeholder={{ color: props.placeHolder }} placeHolder = 'địa chỉ ảnh' />
                     <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
                         <Button onClick = {check} colorScheme = 'facebook'>add</Button>
                     </Stack> 
