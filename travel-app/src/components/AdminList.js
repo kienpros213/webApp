@@ -7,14 +7,13 @@ import { Text,Table,
     Stack,
     Button,
     Textarea,
-    Switch
 } from "@chakra-ui/react";
 
 import {React, useState, useEffect} from "react";
 
-function AdminList(){
+function AdminList(props){
 
-    const [currenState, setCurrentState] = useState(false)
+    const [currentState, setCurrentState] = useState(false)
 
     //render place
     const [selected, setSelected] = useState("lmao");
@@ -55,34 +54,13 @@ function AdminList(){
         .then( (data) => setContent(data) );
     }
 
-
-    function Check(){
-        if(currenState){
-            setCurrentState(false)
-        }
-        else{
-            setCurrentState(true)
-        }
-        console.log(currenState)
-    }
-
-    function Check2(){
-        if(currenState){
-            console.log("lmao true")
-        }
-        else{
-            console.log("lmao false")
-        }
-    }
-
     return(
         <Stack direction='row' spacing = '1vh'>
-            <Switch isChecked = {currenState} onChange={Check}/>
-            <Stack direction = 'column' borderRadius = '10px' bg = 'white' display='flex'>
-                <Stack direction='column'  overflow = 'hidden' bg = 'white' borderRadius = {10} display = 'flex' justifyContent='center' p = {5} h='71vh' w='60vh'>  
+            <Stack direction = 'column' borderRadius = '10px' bg = {props.formColor} display='flex'>
+                <Stack direction='column'  overflow = 'hidden' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {5} h='71vh' w='60vh'>  
                     <Stack textAlign = 'center'>
-                        <Text fontSize = '4xl'> Danh sách địa điểm </Text>
-                        <Text fontSize = '3xl'> đang chọn {selected} </Text>
+                        <Text fontSize = '4xl' color = {props.fontColor}> Danh sách địa điểm </Text>
+                        <Text fontSize = '3xl' color = {props.fontColor}> đang chọn {selected} </Text>
                     </Stack>
                     <Stack overflowY= 'scroll'>    
                         <Table h='30vh' w='100%' variant='striped'>
@@ -111,7 +89,7 @@ function AdminList(){
                     </Stack> 
                 </Stack>  
             </Stack>
-            <Textarea value = {content.description} w = '40vw' h = '71vh' bg = 'white' p = {10} placeholder='Here is a sample placeholder'/>
+            <Textarea value = {content.description} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'/>
         </Stack>
     )
 }

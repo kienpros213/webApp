@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
-import { Input, Box, Button, Stack, useToast, Select, Text } from '@chakra-ui/react';
+import { Input, Box, Button, Stack, useToast, Select } from '@chakra-ui/react';
 
-function AddLocation(){
+function AddLocation(props){
 
     const [place, setPlace] = useState([]);
 
@@ -57,30 +57,31 @@ function AddLocation(){
                 });
 
                 console.log(locationName, imgName, description);
-            }   
+            }
             
     }
 
     return(
-        <Box display='flex' pt = '1vh'>
-                <Stack direction='column' bg = 'white' borderRadius = '10px' display = 'flex' justifyContent='center' p = {5} h='35vh' w='40vh'>
-                    <Text fontSize = 'xl' textAlign = 'center'> Thêm địa điểm </Text>
-                    <Select id = 'placeName'>
+        <>
+                <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
+                    <Select id = 'placeName' bg = {props.boxColor} color = {props.fontColor}>
                         {place.map((item)=> (
                                 <option> {item.placeName} </option>
                                 )
                             )
                         }
                     </Select>
-                    <Input bg='white' id = 'locationName' placeHolder = 'tên địa điểm' />
-                    <Input bg='white' id = 'description' placeHolder = 'mô tả' />
-                    <Input bg='white' id = 'imgName' placeHolder = 'địa chỉ ảnh' />
+                    <Input bg={props.boxColor} id = 'locationName' placeHolder = 'tên địa điểm' />
+                    <Input bg={props.boxColor} id = 'description' placeHolder = 'mô tả' />
+                    <Input bg={props.boxColor} id = 'imgName' placeHolder = 'địa chỉ ảnh' />
                     <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
                         <Button onClick = {check} colorScheme = 'facebook'>add</Button>
                     </Stack> 
                 </Stack>
-        </Box>
+
+        </>
     )
+
 }
 
 export default AddLocation;
