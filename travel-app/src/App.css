@@ -1,35 +1,30 @@
 @font-face {
     font-family: Madurai;
-    src: url(./fonts/ArimaMadurai-Thin.ttf);
+    src: url(./fonts/FiraSansExtraCondensed-Light.ttf);
 }
 
 @font-face {
     font-family: MaduraiReg;
-    src: url(./fonts/ArimaMadurai-Regular.ttf);
+    src: url(./fonts/FiraSansExtraCondensed-Regular.ttf);
 }
 
 @font-face {
     font-family: MaduraiBold;
-    src: url(./fonts/ArimaMadurai-Bold.ttf);
+    src: url(./fonts/FiraSansExtraCondensed-Bold.ttf);
 }
 
 @font-face {
     font-family: MaduraiExtraBold;
-    src: url(./fonts/ArimaMadurai-ExtraBold.ttf);
+    src: url(./fonts/FiraSansExtraCondensed-ExtraBold.ttf);
 }
 
 @font-face {
     font-family: MaduraiMed;
-    src: url(./fonts/ArimaMadurai-Medium.ttf);
-}
-
-@font-face {
-    font-family: MaduraiReg;
-    src: url(./fonts/ArimaMadurai-Regular.ttf);
+    src: url(./fonts/FiraSansExtraCondensed-Medium.ttf);
 }
 
 *{
-    font-family: MaduraiBold;
+    font-family: MaduraiMed;
 }
 
 .main{
