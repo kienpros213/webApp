@@ -63,17 +63,17 @@ function AdminList(props){
                         <Text fontSize = '3xl' color = {props.fontColor}> đang chọn {selected} </Text>
                     </Stack>
                     <Stack overflowY= 'scroll'>    
-                        <Table h='30vh' w='100%' variant='striped'>
+                        <Table h='30vh' w='100%' variant='striped' colorScheme={props.boxColor} color = {props.fontColor}>
                             <Thead>
                                 <Tr>
-                                    <Th> id </Th>
-                                    <Th> Location Name </Th>
-                                    <Th> Place Name </Th>
+                                    <Th color = {props.fontColor}> id </Th>
+                                    <Th color = {props.fontColor}> Location Name </Th>
+                                    <Th color = {props.fontColor}> Place Name </Th>
                                 </Tr>
                             </Thead>
                             <Tbody>
                                 {place.map((item)=> (
-                                <Tr key = {item.locationId}>
+                                <Tr _hover={{background: 'teal'}} _focus={{background: 'teal'}} key = {item.locationId}>
                                     <Td id = {item.locationId} onClick={fetchData}> {item.locationId} </Td>
                                     <Td id = {item.locationId} onClick={fetchData}> {item.locationName} </Td>
                                     <Td id = {item.locationId} onClick={fetchData}> {item.placeName} </Td>
@@ -89,7 +89,7 @@ function AdminList(props){
                     </Stack> 
                 </Stack>  
             </Stack>
-            <Textarea value = {content.description} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'/>
+            <Textarea value = {content.description} color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'/>
         </Stack>
     )
 }
