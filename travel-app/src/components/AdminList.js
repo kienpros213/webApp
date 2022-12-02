@@ -6,13 +6,13 @@ import { Text,Table,
     Td,
     Stack,
     Button,
+    Textarea,
 } from "@chakra-ui/react";
+import { LazyMotion } from "framer-motion";
 
 import {React, useState, useEffect} from "react";
 
 function AdminList(props){
-
-    const [currentState, setCurrentState] = useState(false)
 
     //render place
     const [selected, setSelected] = useState("lmao");
@@ -73,9 +73,9 @@ function AdminList(props){
                             <Tbody>
                                 {place.map((item)=> (
                                 <Tr _hover={{background: 'teal'}} _focus={{background: 'teal'}} key = {item.locationId}>
-                                    <Td id = {item.locationId} onClick={fetchData}> {item.locationId} </Td>
-                                    <Td id = {item.locationId} onClick={fetchData}> {item.locationName} </Td>
-                                    <Td id = {item.locationId} onClick={fetchData}> {item.placeName} </Td>
+                                    <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.locationId} </Td>
+                                    <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.locationName} </Td>
+                                    <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.placeName} </Td>
                                 </Tr>
                                     )
                                 )
@@ -89,12 +89,7 @@ function AdminList(props){
                 </Stack>  
             </Stack>
             <Stack>
-                <Stack bg = 'red' direction = 'row'>
-                    <Text contentEditable = 'true'> {content.placeName} </Text>
-                    <Text contentEditable = 'true'> {content.locationName} </Text>
-                    <Text contentEditable = 'true'> {content.imgName} </Text>
-                </Stack>
-                <Text borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder' contentEditable = 'true'>{content.description}</Text>
+                <Textarea value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'>{content.description}</Textarea>
             </Stack>
         </Stack>
     )
