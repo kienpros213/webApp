@@ -27,10 +27,6 @@ function AdminPage(){
     return(
         <Stack direction="row" spacing='20px' h = '100vh' borderWidth = '2px' bg = {darkMode[0]} display="flex" justifyContent="center" alignItems = 'center'>
             <Switch isChecked = {currentState} onChange={Check}/>
-            <Stack direction = 'column' spacing='1vh'>
-                <AddPlace formColor = {darkMode[1]} fontColor = {darkMode[2]} boxColor = {darkMode[3]} placeHolder = {darkMode[4]}/>
-                <AddLocation formColor = {darkMode[1]} fontColor = {darkMode[2]} boxColor = {darkMode[3]} placeHolder = {darkMode[4]}/>
-            </Stack>
             <AdminList formColor = {darkMode[1]} fontColor = {darkMode[2]} boxColor = {darkMode[3]} placeHolder = {darkMode[4]}/>
         </Stack>
     );

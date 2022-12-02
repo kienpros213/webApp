@@ -63,7 +63,7 @@ function AddLocation(props){
 
     return(
         <>
-                <Stack boxShadow='2xl' direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
+                <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
                     <Text fontSize = 'xl' textAlign='center' color = {props.fontColor}> Thêm địa điểm </Text>
                     <Select id = 'placeName' bg = {props.boxColor} color = {props.fontColor}>
                         {place.map((item)=> (

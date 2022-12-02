@@ -6,7 +6,6 @@ import { Text,Table,
     Td,
     Stack,
     Button,
-    Textarea,
 } from "@chakra-ui/react";
 
 import {React, useState, useEffect} from "react";
@@ -89,7 +88,14 @@ function AdminList(props){
                     </Stack> 
                 </Stack>  
             </Stack>
-            <Textarea value = {content.description} color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'/>
+            <Stack>
+                <Stack bg = 'red' direction = 'row'>
+                    <Text contentEditable = 'true'> {content.placeName} </Text>
+                    <Text contentEditable = 'true'> {content.locationName} </Text>
+                    <Text contentEditable = 'true'> {content.imgName} </Text>
+                </Stack>
+                <Text borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder' contentEditable = 'true'>{content.description}</Text>
+            </Stack>
         </Stack>
     )
 }
