@@ -22,7 +22,7 @@ function LocationList(){
     const [content, setContent] = useState("")
     function fetchData(e){
         const locationId = e.target.id;
-        fetch("http://localhost:8080/location/findLocationById?id="+locationId+"")
+        fetch("http://localhost:8080/location/findLocationById/"+locationId+"")
         .then( (response) => response.json() )
         .then( (data) => setContent(data) );
         }

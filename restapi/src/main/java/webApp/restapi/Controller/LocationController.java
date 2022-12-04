@@ -5,7 +5,6 @@ import webApp.restapi.Entities.Location;
 import webApp.restapi.Repository.LocationRepository;
 import webApp.restapi.Service.LocationService;
 import java.util.List;
-import org.json.JSONObject;
 
 @RestController
 @RequestMapping(path="/location")
@@ -25,7 +24,7 @@ public class LocationController {
 
     //get location by id
     @CrossOrigin
-    @GetMapping("/getLocationById/{id}")
+    @GetMapping("/findLocationById/{id}")
     private Location getLocation(@PathVariable("id") int id)
     {
         return locationService.getLocationById(id);

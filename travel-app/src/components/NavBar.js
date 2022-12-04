@@ -10,6 +10,7 @@ function NavBar(){
             <HStack p={5} pos='absolute' bg='transparent' spacing={5} display='flex' justifyContent='center'>
                 <LinkButton link = "/" content = "Trang chủ" />
                 <LinkButton link = "/adminPage" content = "Admin" />
+                <LinkButton link = "/add" content = "Add" />
             </HStack>
     );
 }

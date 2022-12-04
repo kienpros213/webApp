@@ -8,7 +8,6 @@ import { Text,Table,
     Button,
     Textarea,
 } from "@chakra-ui/react";
-import { LazyMotion } from "framer-motion";
 
 import {React, useState, useEffect} from "react";
 
@@ -34,7 +33,7 @@ function AdminList(props){
             id: id
         }
 
-        fetch("http://localhost:8080/location/deleteLocation/?id="+selected+"", {
+        fetch("http://localhost:8080/location/deleteLocation/"+selected+"", {
             method: "DELETE",
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(data)
@@ -48,14 +47,12 @@ function AdminList(props){
     const [content, setContent] = useState("")
     function fetchData(e){
         const locationId = e.target.id;
-        fetch("http://localhost:8080/location/getLocationById/"+locationId+"")
+        fetch("http://localhost:8080/location/findLocationById/"+locationId+"")
         .then( (response) => response.json() )
         .then( (data) => setContent(data) );
     }
 
-    function updateLocationDescription(e){
-
-        const id = selected
+    function updateLocationDescription(){
 
         let data = content
 
@@ -89,7 +86,7 @@ function AdminList(props){
                             </Thead>
                             <Tbody>
                                 {place.map((item)=> (
-                                <Tr _hover={{background: 'teal'}} _focus={{background: 'teal'}} key = {item.locationId}>
+                                <Tr _hover={{background: '#8D9EFF'}} key = {item.locationId}>
                                     <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.locationId} </Td>
                                     <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.locationName} </Td>
                                     <Td id = {item.locationId} onClick={(e)=>{setSelected(e.target.id); fetchData(e)}}> {item.placeName} </Td>
@@ -107,7 +104,7 @@ function AdminList(props){
             </Stack>
             <Stack>
                 <Button onClick={updateLocationDescription}> update </Button>
-                <Textarea id = 'test' value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'>{content.description}</Textarea>
+                <Textarea id = 'test' value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='pick a record'></Textarea>
             </Stack>
         </Stack>
     )
