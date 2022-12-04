@@ -5,6 +5,7 @@ import webApp.restapi.Entities.Location;
 import webApp.restapi.Repository.LocationRepository;
 import webApp.restapi.Service.LocationService;
 import java.util.List;
+import org.json.JSONObject;
 
 @RestController
 @RequestMapping(path="/location")

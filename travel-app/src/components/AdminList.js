@@ -53,6 +53,23 @@ function AdminList(props){
         .then( (data) => setContent(data) );
     }
 
+    function updateLocationDescription(e){
+
+        const id = selected
+
+        let data = content
+
+        fetch("http://localhost:8080/location/updateLocation/"+selected+"", {
+            method: "PUT",
+            headers: {'Content-Type': 'application/json'}, 
+            body: data
+            }).then(res => {
+            console.log("Request complete! response:", res);
+            });
+
+            console.log(data);
+    }
+
     return(
         <Stack direction='row' spacing = '1vh'>
             <Stack direction = 'column' borderRadius = '10px' bg = {props.formColor} display='flex'>
@@ -89,7 +106,8 @@ function AdminList(props){
                 </Stack>  
             </Stack>
             <Stack>
-                <Textarea value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'>{content.description}</Textarea>
+                <Button onClick={updateLocationDescription}> update </Button>
+                <Textarea id = 'test' value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='Here is a sample placeholder'>{content.description}</Textarea>
             </Stack>
         </Stack>
     )

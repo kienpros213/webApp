@@ -22,7 +22,7 @@ function AddPlace(props){
         console.log("Request complete! response:", res);
         });
 
-        console.log(placeName, imgName, description);
+        console.log(data);
 
     }
     return(
