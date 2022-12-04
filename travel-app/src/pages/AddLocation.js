@@ -62,26 +62,23 @@ function AddLocation(props){
     }
 
     return(
-        <>
-                <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
-                    <Text fontSize = 'xl' textAlign='center' color = {props.fontColor}> Thêm địa điểm </Text>
-                    <Select id = 'placeName' bg = {props.boxColor} color = {props.fontColor}>
-                        {place.map((item)=> (
-                                <option> {item.placeName} </option>
-                                )
+            <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {10} h='35vh' w='40vh'>
+                <Text fontSize = 'xl' textAlign='center' color = {props.fontColor}> Thêm địa điểm </Text>
+                <Select id = 'placeName' bg = {props.boxColor} color = {props.fontColor}>
+                    {place.map((item)=> (
+                            <option> {item.placeName} </option>
                             )
-                        }
-                    </Select>
-                    <Input bg={props.boxColor} id = 'locationName'  _placeholder={{ color: props.placeHolder }} placeHolder = 'tên địa điểm' />
-                    <Input bg={props.boxColor} id = 'description' _placeholder={{ color: props.placeHolder }} placeHolder = 'mô tả' />
-                    <Input bg={props.boxColor} id = 'imgName' _placeholder={{ color: props.placeHolder }} placeHolder = 'địa chỉ ảnh' />
-                    <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
-                        <Button onClick = {check} colorScheme = 'facebook'>add</Button>
-                    </Stack> 
-                </Stack>
-
-        </>
-    )
+                        )
+                    }
+                </Select>
+                <Input bg={props.boxColor} id = 'locationName'  _placeholder={{ color: props.placeHolder }} placeHolder = 'tên địa điểm' />
+                <Input bg={props.boxColor} id = 'description' _placeholder={{ color: props.placeHolder }} placeHolder = 'mô tả' />
+                <Input bg={props.boxColor} id = 'imgName' _placeholder={{ color: props.placeHolder }} placeHolder = 'địa chỉ ảnh' />
+                <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
+                    <Button onClick = {check} colorScheme = 'facebook'>add</Button>
+                </Stack> 
+            </Stack>
+        )
 
 }
 

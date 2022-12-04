@@ -1,47 +1,71 @@
 package webApp.restapi.Controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import webApp.restapi.Repository.LocationRepository;
 import webApp.restapi.Entities.Location;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import webApp.restapi.Repository.LocationRepository;
+import webApp.restapi.Service.LocationService;
 import java.util.List;
-import java.util.Optional;
 
-@Controller
+@RestController
 @RequestMapping(path="/location")
 public class LocationController {
     @Autowired
-    private LocationRepository LocationRepository;
+    LocationService locationService;
+    @Autowired
+    LocationRepository locationRepository;
 
+    //get all locations
     @CrossOrigin
-    @PostMapping(path="/addLocation")
-    public @ResponseBody String addNewLocation (@RequestBody Location location){
-        LocationRepository.save(location);
-        return("location saved!");
-    }
-    @CrossOrigin
-    @GetMapping(path = "/allLocation")
-    public @ResponseBody Iterable<Location> getAllLocation(){
-        return LocationRepository.findAll();
+    @GetMapping("/allLocation")
+    private List<Location> getAllLocation()
+    {
+        return locationService.getAllLocation();
     }
 
+    //get location by id
+    @CrossOrigin
+    @GetMapping("/getLocationById/{id}")
+    private Location getLocation(@PathVariable("id") int id)
+    {
+        return locationService.getLocationById(id);
+    }
+
+    //add location
+    @CrossOrigin
+    @PostMapping("/addLocation")
+    private int saveLocation(@RequestBody Location location)
+    {
+        locationService.saveOrUpdate(location);
+        return location.getLocationId();
+    }
+
+    //delete location
+    @CrossOrigin
+    @DeleteMapping("/deleteLocation/{id}")
+    private void deleteLocation(@PathVariable("id") int id)
+    {
+        locationService.delete(id);
+    }
+
+    //update location
+    @CrossOrigin
+    @PutMapping("/updateLocation")
+    private Location updateLocation(@RequestBody Location location)
+    {
+        locationService.saveOrUpdate(location);
+        return location;
+    }
+
+    //find by place name
+    @CrossOrigin
     @GetMapping(path = "/findLocation")
     public @ResponseBody List<Location> findLocation(@RequestParam String placeName){
-        return LocationRepository.findByplaceName(placeName);
+        return locationRepository.findByplaceName(placeName);
     }
 
-    @GetMapping(path = "/findLocationById")
-    public @ResponseBody Optional<Location> findLocationById(@RequestParam String id){
-        return LocationRepository.findById(Integer.parseInt(id));
-    }
     @CrossOrigin
-    @DeleteMapping(path = "/deleteLocation")
-    public @ResponseBody String deleteLocation(@RequestParam String id){
-        LocationRepository.deleteById(Integer.parseInt(id));
-        return("deleted");
+    @PutMapping(path = "/updateLocation/{id}")
+    public void updateLocation(@PathVariable("id") int id, @RequestBody String description){
+        locationService.updateLocationDescription(id, description);
     }
 }
