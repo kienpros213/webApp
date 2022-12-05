@@ -1,8 +1,6 @@
 import {React, useState} from "react";
 import {Stack, Switch} from '@chakra-ui/react'
-import AddPlace from "./AddPlace";
 import AdminList from "../components/AdminList";
-import AddLocation from "./AddLocation";
 
 function AdminPage(){
 

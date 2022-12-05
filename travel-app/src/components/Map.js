@@ -1,16 +1,27 @@
-import React from 'react'
-import { withGoogleMap, withScriptjs, GoogleMap } from "react-google-maps"
+import {React} from 'react'
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
-const Map = () => {
+const containerStyle = {
+  width: '100%',
+  height: '100%'
+};
+
+function Map(props){
+
   return (
-    <div>
-      <GoogleMap
-          defaultZoom={8}
-          defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    <>
+      <LoadScript
+        googleMapsApiKey="AIzaSyDq22uth2dwpQKoLdYZ6Ib1wWG_0OqufQE"
+      >
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={{lat: props.center[0], lng: props.center[1]}}
+          zoom={10}
         >
-      </GoogleMap>
-    </div>
-  );
+        </GoogleMap>
+      </LoadScript>
+    </>
+  )
 }
 
-export default withScriptjs(withGoogleMap(Map));
+export default Map

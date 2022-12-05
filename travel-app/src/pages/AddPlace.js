@@ -26,12 +26,12 @@ function AddPlace(props){
 
     }
     return(
-            <Box display='flex'>
-                <Stack direction='column' bg = {props.formColor} borderRadius = {10} display = 'flex' justifyContent='center' p = {5} h='35vh' w='40vh'>
-                    <Text textAlign='center' fontSize='xl' color = {props.fontColor}> Thêm tỉnh thành </Text>
-                    <Input bg={props.boxColor} id = 'placeName' _placeholder={{ color: props.placeHolder }} color = {props.fontColor} placeHolder = 'Tên tỉnh thành' />
-                    <Input bg={props.boxColor} id = 'description' _placeholder={{ color: props.placeHolder }} color = {props.fontColor} placeHolder = 'mô tả' />
-                    <Input bg={props.boxColor} id = 'imgName' _placeholder={{ color: props.placeHolder }} color = {props.fontColor} placeHolder = 'địa chỉ ảnh' />
+            <Box bg = '#8D9EFF' h = '100vh' display = 'flex' justifyContent = 'center' alignItems = 'center'>
+                <Stack direction='column' bg = 'white' borderRadius = {10} display = 'flex' justifyContent='center' p = {5} h='35vh' w='40vh'>
+                    <Text textAlign='center' fontSize='xl'> Thêm tỉnh thành </Text>
+                    <Input id = 'placeName' placeHolder = 'Tên tỉnh thành' />
+                    <Input id = 'description' placeHolder = 'mô tả' />
+                    <Input id = 'imgName' placeHolder = 'địa chỉ ảnh' />
 
                     <Stack direction='row' display='flex' justifyContent = 'center' spacing = {10}>
                         <Button onClick = {addPlace} colorScheme = 'facebook'>add</Button>

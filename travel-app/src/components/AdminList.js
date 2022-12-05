@@ -6,7 +6,7 @@ import { Text,Table,
     Td,
     Stack,
     Button,
-    Textarea,
+    Textarea,   
 } from "@chakra-ui/react";
 
 import {React, useState, useEffect} from "react";

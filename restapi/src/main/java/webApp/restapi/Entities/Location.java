@@ -18,6 +18,10 @@ public class Location {
     private String description;
     @JsonProperty("imgName")
     private String imgName;
+    @JsonProperty("lat")
+    private String lat;
+    @JsonProperty("lng")
+    private String lng;
 
     public Integer getLocationId() {
         return locationId;
@@ -57,5 +61,21 @@ public class Location {
 
     public void setImgName(String imgName) {
         this.imgName = imgName;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLng() {
+        return lng;
+    }
+
+    public void setLng(String lng) {
+        this.lng = lng;
     }
 }

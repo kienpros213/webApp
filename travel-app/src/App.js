@@ -8,7 +8,6 @@ import AddLocation from './pages/AddLocation';
 import Example from './Test';
 import AdminPage from './pages/AdminPage';
 import NavBar from './components/NavBar';
-import Add from './components/Add';
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         <Route path='/locationList/:location' element = {<LocationList/>} />
         <Route path='/addPlace' element = {<AddPlace/>} />
         <Route path='/addLocation' element = {<AddLocation/>} />
-        <Route path='add' element = {<Add/>}/>
+        <Route path='add' element = {<AddLocation/>}/>
         <Route path='/adminPage' element = {<AdminPage/>} />
       </Routes>
     </ChakraProvider>
