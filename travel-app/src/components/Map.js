@@ -3,13 +3,12 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
-  height: '100%'
+  height: '100%',
 };
 
 function Map(props){
 
   return (
-    <>
       <LoadScript
         googleMapsApiKey="AIzaSyDq22uth2dwpQKoLdYZ6Ib1wWG_0OqufQE"
       >
@@ -20,7 +19,6 @@ function Map(props){
         >
         </GoogleMap>
       </LoadScript>
-    </>
   )
 }
 

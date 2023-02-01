@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, Image, Box, Divider} from "@chakra-ui/react";
+import {Text, Image, Box} from "@chakra-ui/react";
 
 function LocationDescription(props){
     return(

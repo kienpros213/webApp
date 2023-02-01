@@ -69,11 +69,11 @@ function LocationList(){
             </Stack>
 
             {/* right */}
-                <Stack pt={10} direction='column' bg = '#b6d1e3' w = '50vw' h = '100vw' pos='fixed' left = '50vw'>
-                    <Box boxShadow='dark-lg' overflow='hidden' overflowY= 'scroll' borderRadius='10px' bg = 'white' h='25%'>
+                <Stack pt={10} direction='column' bg = '#b6d1e3' w = '48vw' h = '100vw' pos='fixed' left = '50vw'>
+                    <Box resize='vertical' boxShadow='dark-lg' overflow='hidden' overflowY= 'scroll' borderRadius='10px' bg = 'white' h='25%'>
                         <LocationDescription placeName = {content.placeName} locationName = {content.locationName} body = {content.description} imageAddress = {content.imgName} />
                     </Box>
-                    <Box boxShadow='dark-lg' borderRadius='10px' bg = 'white' h='25%' >
+                    <Box resize='vertical' boxShadow='dark-lg' borderRadius='10px' bg = 'white' h='25%' >
                         <Map center = {[parseFloat(center[0]),parseFloat(center[1])]} />
                     </Box>
                 </Stack>

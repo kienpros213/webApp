@@ -5,7 +5,6 @@ import MainPage from './pages/MainPage';
 import AddPlace from './pages/AddPlace';
 import LocationList from './pages/LocationList';
 import AddLocation from './pages/AddLocation';
-import Example from './Test';
 import AdminPage from './pages/AdminPage';
 import NavBar from './components/NavBar';
 

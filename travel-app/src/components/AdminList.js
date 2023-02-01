@@ -28,7 +28,6 @@ function AdminList(props){
     function deleteLocation(e){
 
         const id = e.target.id;
-
         let data = {
             id: id
         }
@@ -104,7 +103,7 @@ function AdminList(props){
             </Stack>
             <Stack>
                 <Button onClick={updateLocationDescription}> update </Button>
-                <Textarea id = 'test' value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='pick a record'></Textarea>
+                <Textarea value = {content.description} onChange = {(e)=>{setContent(e.target.value)}} borderRadius = '10px' color = {props.fontColor} w = '40vw' h = '71vh' bg = {props.formColor} p = {10} placeholder='pick a record'></Textarea>
             </Stack>
         </Stack>
     )

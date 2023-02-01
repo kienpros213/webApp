@@ -2,7 +2,7 @@ import React from "react";
 import view from '../components/image/view.jpg';
 import { Image, Stack, Box, Text, Button } from '@chakra-ui/react'
 import Place from "../components/Place";
-import {hcm, hn, dn, qn, hp, chobenthanh, caurong, cauvang, langbac, hoguom, vanmieu, phoco, h, nb} from "../components/image/imageList"
+import {hcm, hn, dn, qn, hp, chobenthanh, caurong, cauvang, langbac, hoguom, vanmieu, h, nb} from "../components/image/imageList"
 
 function MainPage(){
     return(
